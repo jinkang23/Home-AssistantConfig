@@ -12,9 +12,9 @@ homeassistant:
 
   customize: !include customize.yaml
 
-zwave:
-  usb_path: /dev/ttyACM0
-  config_path: /config/ozw_config
+# zwave:
+#   usb_path: /dev/ttyACM0
+#   config_path: /config/ozw_config
 
 
   # customize: !include customize.yaml
