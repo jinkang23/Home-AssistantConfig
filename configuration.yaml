@@ -1,6 +1,6 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
-# default_config:
+default_config:
 
 homeassistant:
   name: Home
@@ -24,8 +24,8 @@ homeassistant:
 #   ssl_certificate: /ssl/fullchain.pem
 #   ssl_key: /ssl/privkey.pem
 
-lovelace:
-  mode: yaml
+#lovelace:
+#  mode: yaml
 
 # Text to speech
 tts:
