@@ -1,18 +1,55 @@
-# Example .gitignore file for your config dir.
-# An * ensures that everything will be ignored.
-*
-# You can whitelist files/folders with !, these will not be ignored.
-!automation/
-!*.yaml
-!.gitignore
-!*.md
-
-# Ignore folders.
-.storage
+# Files/Folders with personal details or unneeded
 .cloud
 .google.token
-
-# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+.HA_VERSION
+.storage
+.uuid
+.vscode
+home-assistant_v2.db*
+home-assistant.db*
+html5_push_registrations.conf
+options.xml
+pyozw.sqlite
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+themes
+zigbee.db
+zwcfg_*
+zwscene.xml
+
+# automatically downloaded dependencies
+deps
+lib
+www
+
+# Log files
+home-assistant.log
+OZW_Log.txt
+
+# Development files
+custom_components/
+
+
+# # Example .gitignore file for your config dir.
+# # You can whitelist files/folders with !, these will not be ignored.
+# !automation/
+# !ozw_config/
+# !*.yaml
+# !.gitignore
+# !*.md
+# !*.xsd
+# !*.xml
+
+# # An * ensures that everything will be ignored.
+# #*
+
+# # Ignore folders.
+# .storage
+# .cloud
+# .google.token
+
+# # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+# ip_bans.yaml
+# secrets.yaml
+# known_devices.yaml

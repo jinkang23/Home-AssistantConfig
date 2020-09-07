@@ -1,0 +1,3 @@
+# Inovelli RGB fix - https://community.home-assistant.io/t/guide-for-installing-inovelli-devices-in-home-assistant-ozwave-v1-4/172043
+light.inovelli_lzw42_multi_color_bulb_level:
+  supported_features: 177
