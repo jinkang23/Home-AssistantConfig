@@ -1,7 +1,6 @@
 # Files/Folders with personal details or unneeded
 .cloud
 .google.token
-.HA_VERSION
 .storage
 .uuid
 .vscode
