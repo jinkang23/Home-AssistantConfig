@@ -1,11 +1,3 @@
-# kind: pipeline
-# name: prep
-
-# steps:
-#   - name: stage_files
-#     image: alpine:latest
-#     commands:
-#       -  mv fake_secrets.yaml secrets.yaml
 ---
 kind: pipeline
 name: validate
