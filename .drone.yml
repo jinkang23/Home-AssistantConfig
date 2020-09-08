@@ -69,8 +69,12 @@ steps:
         from_secret: ssh_key
       port: 22
       script:
-        - echo "hello world"
-
+        - |
+          echo "hello world"
+          cd ~
+          cd config
+          echo $(cat options.xml)
+          
 
 
 
