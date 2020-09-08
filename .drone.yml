@@ -81,6 +81,7 @@ steps:
         from_secret: ssh_key
       port: 22
       script:
+        - source '/etc/profile.d/homeassistant.sh'
         - echo "Updating Home Assistant Core"
         - echo "current core version is $(ha core info | grep ^version:)"
         - ha core update
@@ -131,6 +132,7 @@ steps:
         from_secret: ssh_key
       port: 22
       script:
+        - source '/etc/profile.d/homeassistant.sh'
         - echo "restarting home assistant"
         - ha core restart
         - echo "hello"
