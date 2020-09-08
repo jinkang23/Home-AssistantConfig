@@ -13,16 +13,16 @@ steps:
     commands:
       - jsonlint --version || true
       - |
-      for file in $(find . -type f -name "*.json" -path "mysensors.json" -prune); do
-        if ! jsonlint -q $file; then
-          export FAILED=1
-        else
-          echo "$file OK"
+        for file in $(find . -type f -name "*.json" -path "mysensors.json" -prune); do
+            if ! jsonlint -q $file; then
+            export FAILED=1
+            else
+            echo "$file OK"
+            fi
+        done
+        if [ "${FAILED}" = "1" ]; then
+            exit 1
         fi
-      done
-      if [ "${FAILED}" = "1" ]; then
-        exit 1
-      fi
     failure: ignore
 
 ---
@@ -48,6 +48,7 @@ steps:
     commands:
       - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --info all --script check_config --config .
+
 
 #
 # ---

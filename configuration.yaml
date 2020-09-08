@@ -31,7 +31,7 @@ homeassistant:
 #   ssl_certificate: /ssl/fullchain.pem
 #   ssl_key: /ssl/privkey.pem
 
-#lovelace:
+# lovelace:
 #  mode: yaml
 
 # Text to speech
