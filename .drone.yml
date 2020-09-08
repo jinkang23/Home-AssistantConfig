@@ -21,7 +21,7 @@ steps:
     commands:
       - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --config .
-
+#
 # ---
 # kind: pipeline
 # type: ssh
