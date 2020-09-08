@@ -63,7 +63,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - '172.16.40.20'
+        - 'hass.i.hs2k.us'
       username: root
       key:
         from_secret: ssh_key
