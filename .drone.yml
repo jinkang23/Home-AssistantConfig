@@ -73,13 +73,15 @@ server:
 steps:
   - name: upgrade
     commands:
-      - cd /opt/configurations/docker-compose/homeassistant
-      - docker-compose pull
+      #- cd /opt/configurations/docker-compose/homeassistant
+      #- docker-compose pull
+      - echo "hello world"
   - name: clean
     commands:
-      - cd /opt/configurations/docker-compose/homeassistant
-      - docker image prune -f
-      - docker container prune -f
+      # - cd /opt/configurations/docker-compose/homeassistant
+      # - docker image prune -f
+      # - docker container prune -f
+      - echo "hello world"
 
 #
 # ---
