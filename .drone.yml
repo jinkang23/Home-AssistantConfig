@@ -57,7 +57,11 @@ steps:
 
 ---
 kind: pipeline
-name: upgrade home assistant
+name: upgrade
+
+depends_on:
+  - validate
+  - test
 
 trigger:
   branch:
@@ -91,6 +95,11 @@ steps:
 ---
 kind: pipeline
 name: deploy
+
+depends_on:
+  - validate
+  - test
+  - upgrade
 
 trigger:
   branch:
