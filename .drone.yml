@@ -3,24 +3,52 @@ kind: pipeline
 name: validate
 
 steps:
-  - name: lint
+  - name: yamllint
     image: cytopia/yamllint:latest
     commands:
       - yamllint .
     failure: ignore
-
+  - name: jsonlint
+    image: sahsu/docker-jsonlint
+    commands:
+      - jsonlint --version || true
+      - |
+      for file in $(find . -type f -name "*.json" -path "mysensors.json" -prune); do
+        if ! jsonlint -q $file; then
+          export FAILED=1
+        else
+          echo "$file OK"
+        fi
+      done
+      if [ "${FAILED}" = "1" ]; then
+        exit 1
+      fi
+    failure: ignore
 
 ---
 kind: pipeline
 name: test
 
 steps:
-  - name: test
+  - name: ha-latest
     image: homeassistant/home-assistant:latest
     pull: if-not-exists
     commands:
       - mv fake_secrets.yaml secrets.yaml
-      - python -m homeassistant --script check_config --config .
+      - python -m homeassistant --info all --script check_config --config .
+  - name: ha-rc
+    image: homeassistant/home-assistant:rc
+    pull: if-not-exists
+    commands:
+      - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --info all --script check_config --config .
+  - name: ha-dev
+    image: homeassistant/home-assistant:dev
+    pull: if-not-exists
+    commands:
+      - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --info all --script check_config --config .
+
 #
 # ---
 # kind: pipeline
