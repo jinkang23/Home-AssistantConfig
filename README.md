@@ -1,15 +1,7 @@
 # Jin's Home Assistant Configuration
 
-![Project Maintenance][maintenance-shield]
-[![License][license-shield]](LICENSE.md)  
-
-[![Home Assistant CI](http://drone.i.hs2k.us:8000/api/badges/jinkang23/Home-AssistantConfig/status.svg)](http://drone.i.hs2k.us:8000/jinkang23/Home-AssistantConfig)
-[![GitHub Activity][commits-shield]][commits]
-[![GitHub Last Commit][last-commit-shield]][commits]
-
-![GitHub Stars][stars-shield]
-![GitHub Watchers][watchers-shield]
-![GitHub Forks][forks-shield]
+[![Build Status](http://drone.i.hs2k.us:8000/api/badges/jinkang23/Home-AssistantConfig/status.svg)](http://drone.i.hs2k.us:8000/jinkang23/Home-AssistantConfig)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)  
 
 ## About  
 This is my personal [Home Assistant](https://www.home-assistant.io/) configuration. The instance is running on a Virtual Machine using [Unraid](https://unraid.net/). The VM has 2 cores and 2 GB of RAM allocated.   
