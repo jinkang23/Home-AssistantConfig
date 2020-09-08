@@ -1,12 +1,11 @@
-kind: pipeline
-name: prep
+# kind: pipeline
+# name: prep
 
-steps:
-  - name: stage_files
-    image: alpine:latest
-    commands:
-      -  mv fake_secrets.yaml secrets.yaml
-
+# steps:
+#   - name: stage_files
+#     image: alpine:latest
+#     commands:
+#       -  mv fake_secrets.yaml secrets.yaml
 ---
 kind: pipeline
 name: validate
@@ -39,6 +38,10 @@ kind: pipeline
 name: test
 
 steps:
+  - name: stage files
+    image: alpine:latest
+    commands:
+      -  mv fake_secrets.yaml secrets.yaml
   - name: ha-latest
     image: homeassistant/home-assistant:latest
     pull: if-not-exists
