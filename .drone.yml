@@ -30,25 +30,24 @@ kind: pipeline
 name: test
 
 steps:
-    - name: ha-latest
-      image: homeassistant/home-assistant:latest
-      pull: if-not-exists
-      commands:
-        - mv fake_secrets.yaml secrets.yaml
-        - python -m homeassistant --script check_config --info --config .
-    - name: ha-rc
-      image: homeassistant/home-assistant:rc
-      pull: if-not-exists
-      commands:
-        - mv fake_secrets.yaml secrets.yaml
-        - python -m homeassistant --script check_config --info --config .
-    - name: ha-dev
-      image: homeassistant/home-assistant:dev
-      pull: if-not-exists
-      commands:
-        - mv fake_secrets.yaml secrets.yaml
-        - python -m homeassistant --script check_config --info --config .
-
+  - name: ha-latest
+    image: homeassistant/home-assistant:latest
+    pull: if-not-exists
+    commands:
+      - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info --config .
+  - name: ha-rc
+    image: homeassistant/home-assistant:rc
+    pull: if-not-exists
+    commands:
+      - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info --config .
+  - name: ha-dev
+    image: homeassistant/home-assistant:dev
+    pull: if-not-exists
+    commands:
+      - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info --config .
 #
 # ---
 # kind: pipeline
