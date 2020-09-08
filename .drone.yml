@@ -57,9 +57,17 @@ steps:
 
 ---
 kind: pipeline
-name: ssh
+name: upgrade home assistant
+
+trigger:
+  branch:
+    - master
+  event:
+    exclude:
+      - pull_request
+
 steps:
-  - name: ssh
+  - name: upgrade to latest
     image: appleboy/drone-ssh
     settings:
       host:
@@ -70,13 +78,54 @@ steps:
       port: 22
       script:
         - |
-          echo "hello world"
-          cd ~
-          cd config
-          echo $(cat options.xml)
-          
+          echo "Updating Home Assistant Core"
+          echo "current core version: $(ha core info | grep ^version:)"
+          ha core update
+          echo "updated core version: $(ha core info | grep ^version:)"
 
+          echo "Updating Home Assistant Supervisor"
+          echo "current supervisor version: $(ha supervisor info | grep ^version:)"
+          ha supervisor update
+          echo "updated supervisor version: $(ha supervisor info | grep ^version:)"
 
+---
+kind: pipeline
+name: deploy
+
+trigger:
+  branch:
+    - master
+  event:
+    exclude:
+      - pull_request
+
+steps:
+  - name: git pull
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 'hass.i.hs2k.us'
+      username: root
+      key:
+        from_secret: ssh_key
+      port: 22
+      script:
+        - cd ~/config
+        - git fetch
+        - git reset --hard origin/master
+
+  - name: restart
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 'hass.i.hs2k.us'
+      username: root
+      key:
+        from_secret: ssh_key
+      port: 22
+      script:
+        - echo "restarting home assistant"
+        - ha core restart
 
 # ---
 # kind: pipeline
