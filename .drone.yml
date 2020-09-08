@@ -132,4 +132,4 @@ steps:
       port: 22
       script:
         - echo "restarting home assistant"
-        - ha core restart 2> /dev/null || true
+        - ha core restart || true
