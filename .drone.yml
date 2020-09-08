@@ -71,7 +71,7 @@ trigger:
       - pull_request
 
 steps:
-  - name: upgrade to latest
+  - name: upgrade to ha-latest
     image: appleboy/drone-ssh
     settings:
       host:
