@@ -52,6 +52,30 @@ steps:
     commands:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
+
+
+---
+kind: pipeline
+type: ssh
+name: upgrade
+
+server:
+  host: 172.16.40.20
+  user: root
+  ssh_key:
+    from_secret: SSH_KEY
+
+steps:
+  - name: upgrade
+    commands:
+      - cd /opt/configurations/docker-compose/homeassistant
+      - docker-compose pull
+  - name: clean
+    commands:
+      - cd /opt/configurations/docker-compose/homeassistant
+      - docker image prune -f
+      - docker container prune -f
+
 #
 # ---
 # kind: pipeline
