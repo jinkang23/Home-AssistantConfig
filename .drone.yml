@@ -28,8 +28,8 @@ steps:
 ---
 kind: pipeline
 name: test
-depends_on:
-  - validate
+# depends_on:
+#   - validate
 
 steps:
   - name: stage files
@@ -81,16 +81,14 @@ steps:
         from_secret: ssh_key
       port: 22
       script:
-        - |
-          echo "Updating Home Assistant Core"
-          echo "current core version: $(ha core info | grep ^version:)"
-          ha core update
-          echo "updated core version: $(ha core info | grep ^version:)"
-
-          echo "Updating Home Assistant Supervisor"
-          echo "current supervisor version: $(ha supervisor info | grep ^version:)"
-          ha supervisor update
-          echo "updated supervisor version: $(ha supervisor info | grep ^version:)"
+        - echo "Updating Home Assistant Core"
+        - echo "current core version is $(ha core info | grep ^version:)"
+        - ha core update
+        - echo "updated core version is $(ha core info | grep ^version:)"
+        - echo "Updating Home Assistant Supervisor"
+        - echo "current supervisor version is $(ha supervisor info | grep ^version:)"
+        - ha supervisor update
+        - echo "updated supervisor version is $(ha supervisor info | grep ^version:)"
 
 ---
 kind: pipeline
@@ -134,7 +132,7 @@ steps:
       port: 22
       script:
         - echo "restarting home assistant"
-        - ha core restart
+        - ha core restart 2> /dev/null || true
 
 # ---
 # kind: pipeline
