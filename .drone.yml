@@ -28,6 +28,8 @@ steps:
 ---
 kind: pipeline
 name: test
+depends_on:
+  - validate
 
 steps:
   - name: stage files
@@ -58,6 +60,9 @@ steps:
 kind: pipeline
 type: ssh
 name: upgrade
+depends_on:
+  - validate
+  - test
 
 server:
   host: 172.16.40.20
