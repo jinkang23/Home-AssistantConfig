@@ -1,3 +1,12 @@
+kind: pipeline
+name: prep
+
+steps:
+  - name: stage_files
+    image: alpine:latest
+    commands:
+      -  mv fake_secrets.yaml secrets.yaml
+
 ---
 kind: pipeline
 name: validate
@@ -7,7 +16,7 @@ steps:
     image: cytopia/yamllint:latest
     commands:
       - yamllint .
-    failure: ignore
+    # failure: ignore
   - name: jsonlint
     image: sahsu/docker-jsonlint
     commands:
@@ -23,7 +32,7 @@ steps:
         if [ "${FAILED}" = "1" ]; then
             exit 1
         fi
-    failure: ignore
+    # failure: ignore
 
 ---
 kind: pipeline
@@ -34,20 +43,20 @@ steps:
     image: homeassistant/home-assistant:latest
     pull: if-not-exists
     commands:
-      - mv fake_secrets.yaml secrets.yaml
-      - python -m homeassistant --script check_config --info --config .
+      # - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info all --config .
   - name: ha-rc
     image: homeassistant/home-assistant:rc
     pull: if-not-exists
     commands:
-      - mv fake_secrets.yaml secrets.yaml
-      - python -m homeassistant --script check_config --info --config .
+      # - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info all --config .
   - name: ha-dev
     image: homeassistant/home-assistant:dev
     pull: if-not-exists
     commands:
-      - mv fake_secrets.yaml secrets.yaml
-      - python -m homeassistant --script check_config --info --config .
+      # - mv fake_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --info all --config .
 #
 # ---
 # kind: pipeline
