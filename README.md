@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)  
 
 ## About  
-This is my personal [Home Assistant](https://www.home-assistant.io/) configuration. The instance is running on a Virtual Machine using [Unraid](https://unraid.net/). The VM has 2 cores and 2 GB of RAM allocated.   
+This is my personal [Home Assistant](https://www.home-assistant.io/) configuration. The instance is running on a Virtual Machine using [Unraid](https://unraid.net/). The VM has 2 cores and 2 GB of RAM allocated.    
 
 # Devices, services, and software  
 * Z-Wave, using [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw/)  
