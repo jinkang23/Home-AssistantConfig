@@ -18,6 +18,9 @@ homeassistant:
       trusted_networks:
         - 172.16.1.0/24
 
+# integrations
+google_assistant:
+
 # Text to speech
 tts:
   - platform: google_translate
