@@ -18,6 +18,9 @@ homeassistant:
       trusted_networks:
         - 172.16.1.0/24
 
+logger:
+  default: info
+
 # integrations
 # https://www.home-assistant.io/integrations/google_assistant
 google_assistant:
