@@ -22,6 +22,9 @@ group: !include groups.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+# *** Integrations *** #
+homekit:
+
 # ***Custom Components*** #
 
 # alarmdotcomajax: https://github.com/uvjustin/alarmdotcomajax
