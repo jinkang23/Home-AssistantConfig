@@ -83,13 +83,13 @@ steps:
       script:
         - source '/etc/profile.d/homeassistant.sh' # <-- https://github.com/hassio-addons/addon-ssh/issues/115
         - echo "Updating Home Assistant Core"
-        - echo "current core version is $(ha core info | grep ^version:)"
+        - echo "current core is $(ha core info | grep ^version:)"
         - ha core update
-        - echo "updated core version is $(ha core info | grep ^version:)"
+        - echo "updated core is $(ha core info | grep ^version:)"
         - echo "Updating Home Assistant Supervisor"
-        - echo "current supervisor version is $(ha supervisor info | grep ^version:)"
+        - echo "current supervisor is $(ha supervisor info | grep ^version:)"
         - ha supervisor update
-        - echo "updated supervisor version is $(ha supervisor info | grep ^version:)"
+        - echo "updated supervisor is $(ha supervisor info | grep ^version:)"
 
 ---
 kind: pipeline
