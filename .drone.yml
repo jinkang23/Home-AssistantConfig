@@ -83,7 +83,7 @@ trigger:
       - pull_request
 
 steps:
-  - name: upgrade to ha-latest
+  - name: upgrade to hass-latest
     image: appleboy/drone-ssh
     settings:
       host:
@@ -151,6 +151,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: c38e8856a29d56f05007f467eb9aefe30b1efb40817f272cb1ed9c1173e4aac3
+hmac: e992f5fc8b1de1817d553e2303ffe26d7584f80b06450358b1137504e2184ae1
 
 ...
