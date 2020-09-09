@@ -9,4 +9,4 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 * Z-Wave, using [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw/)  
     * [Aeotec Z-Stick Gen5](https://aeotec.com/z-wave-usb-stick/)  
 * Zigbee, using [ZHA](https://www.home-assistant.io/integrations/zha/)  
-    * [Conbee II](https://phoscon.de/en/conbee2)   
+    * [Conbee II](https://phoscon.de/en/conbee2)  

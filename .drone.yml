@@ -135,3 +135,8 @@ steps:
         - source '/etc/profile.d/homeassistant.sh' # <-- https://github.com/hassio-addons/addon-ssh/issues/115
         - echo "restarting home assistant"
         - ha core restart
+---
+kind: signature
+hmac: c5e905962d072c060c2e8b54159e6a6d565dbba424fde7db8c7ce09f3f14840f
+
+...
