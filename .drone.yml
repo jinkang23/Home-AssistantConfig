@@ -48,19 +48,19 @@ steps:
     image: alpine:latest
     commands:
       -  mv fake_secrets.yaml secrets.yaml
-  - name: ha-latest
+  - name: hass-latest
     image: homeassistant/home-assistant:latest
     pull: if-not-exists
     commands:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
-  - name: ha-rc
+  - name: hass-rc
     image: homeassistant/home-assistant:rc
     pull: if-not-exists
     commands:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
-  - name: ha-dev
+  - name: hass-dev
     image: homeassistant/home-assistant:dev
     pull: if-not-exists
     commands:
@@ -151,6 +151,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: a04added51254c0cd5ed9b6a251d6fbd00a2a70c3ce2a7f83e576f9efed881be
+hmac: c38e8856a29d56f05007f467eb9aefe30b1efb40817f272cb1ed9c1173e4aac3
 
 ...
