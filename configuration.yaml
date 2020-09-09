@@ -37,6 +37,9 @@ google_assistant:
   #     expose: false
   #     room: LIVING_ROOM
 
+cloud:
+ios:
+
 # Text to speech
 tts:
   - platform: google_translate
