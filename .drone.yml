@@ -139,6 +139,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: 5f17fbb167af6de2a9d0bcee7ec59244f8ef268fc05c4ae8502c13910746a650
+hmac: 11dd7716174c108d4c1380ab3bf06e5f51ed4a9e33be645136cb4caa3fe6a148
 
 ...
