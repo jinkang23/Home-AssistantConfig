@@ -12,28 +12,6 @@ homeassistant:
 
   customize: !include customize.yaml
 
-# zwave:
-#   usb_path: /dev/ttyACM0
-#   config_path: /config/ozw_config
-
-
-# customize: !include customize.yaml
-# customize_domain:
-#   automation:
-#     initial_state: 'on'
-
-# whitelist_external_dirs:
-#   - /config/www
-
-# http:
-#   base_url: !secret ha_base_url
-#   server_port: 443
-#   ssl_certificate: /ssl/fullchain.pem
-#   ssl_key: /ssl/privkey.pem
-
-# lovelace:
-#  mode: yaml
-
 # Text to speech
 tts:
   - platform: google_translate
@@ -43,3 +21,15 @@ automation: !include_dir_merge_list automation
 group: !include groups.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+# ***Custom Components*** #
+
+# alarmdotcomajax: https://github.com/uvjustin/alarmdotcomajax
+alarm_control_panel:
+  - platform: alarmdotcomajax
+    username: !secret alarmdotcom_username
+    password: !secret alarmdotcom_password
+    code: !secret alarmdotcom_code
+    force_bypass: "true"
+    no_entry_delay: "home"
+    silent_arming: "false"
