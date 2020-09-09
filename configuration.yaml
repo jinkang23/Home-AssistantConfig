@@ -22,20 +22,15 @@ homeassistant:
 # https://www.home-assistant.io/integrations/google_assistant
 google_assistant:
   project_id: !secret ga_project_id
-  # service_account: !include SERVICE_ACCOUNT.JSON
-  # report_state: true
-  # exposed_domains:
-  #   - switch
-  #   - light
-  # entity_config:
-  #   switch.kitchen:
-  #     name: CUSTOM_NAME_FOR_GOOGLE_ASSISTANT
-  #     aliases:
-  #       - BRIGHT_LIGHTS
-  #       - ENTRY_LIGHTS
-  #   light.living_room:
-  #     expose: false
-  #     room: LIVING_ROOM
+  service_account:
+    private_key: !secret ga_private_key
+    client_email: !secret ga_client_email
+  report_state: true
+  expose_by_default: true
+  exposed_domains:
+    - switch
+    - light
+    - scene
 
 cloud:
 ios:
