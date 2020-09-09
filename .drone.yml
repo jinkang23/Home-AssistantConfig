@@ -2,12 +2,19 @@
 kind: pipeline
 name: validate
 
+trigger:
+  branch:
+    - master
+    - develop
+  event:
+    exclude:
+      - pull_request
+
 steps:
   - name: yamllint
     image: cytopia/yamllint:latest
     commands:
       - yamllint .
-    # failure: ignore
   - name: jsonlint
     image: sahsu/docker-jsonlint
     commands:
@@ -23,13 +30,18 @@ steps:
         if [ "${FAILED}" = "1" ]; then
             exit 1
         fi
-    # failure: ignore
 
 ---
 kind: pipeline
 name: test
-# depends_on:
-#   - validate
+
+trigger:
+  branch:
+    - master
+    - develop
+  event:
+    exclude:
+      - pull_request
 
 steps:
   - name: stage files
@@ -139,6 +151,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: 11dd7716174c108d4c1380ab3bf06e5f51ed4a9e33be645136cb4caa3fe6a148
+hmac: 92bde69231b17b1df032638848f42bd20e27e12381145ca50e8f39023d803bfb
 
 ...

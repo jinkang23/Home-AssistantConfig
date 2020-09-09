@@ -15,7 +15,7 @@ homeassistant:
   customize: !include customize.yaml
   auth_providers:
     - type: homeassistant
-     trusted_networks:
+      trusted_networks:
         - 172.16.1.0/24
 
 # Text to speech
