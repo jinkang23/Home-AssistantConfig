@@ -23,10 +23,10 @@ tts:
   - platform: google_translate
 
 # https://www.home-assistant.io/integrations/http
-http: 
+http:
   server_host: '0.0.0.0'
   use_x_forwarded_for: true
-  trusted_proxies: 
+  trusted_proxies:
     - '172.16.1.1'
 
 # Includes
