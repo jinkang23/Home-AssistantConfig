@@ -85,9 +85,12 @@ trigger:
 steps:
   - name: upgrade to ha-latest
     image: appleboy/drone-ssh
+    environment:
+      SSH_IP:
+        from_secret: ssh_ip
     settings:
       host:
-        - from_secret: ssh_ip
+        - ${SSH_IP}
       username: root
       key:
         from_secret: ssh_key
@@ -151,6 +154,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: 286629bb4f3b786bd4e0fa024014cdca482b1e3136bee92c50c46aa8258a2d6f
+hmac: 69efefe80902d0b99eb5fa18fd6f609b1cca0e9104da967a76ad6c9e5cf173cc
 
 ...
