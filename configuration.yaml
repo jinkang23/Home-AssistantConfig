@@ -22,7 +22,8 @@ homeassistant:
 tts:
   - platform: google_translate
 
-http:
+# https://www.home-assistant.io/integrations/http
+http: 
   server_host: '0.0.0.0'
   use_x_forwarded_for: true
   trusted_proxies: 
