@@ -24,6 +24,7 @@ scene: !include scenes.yaml
 
 # *** Integrations *** #
 homekit:
+  auto_start: false
 
 # ***Custom Components*** #
 
