@@ -135,8 +135,10 @@ steps:
         - source '/etc/profile.d/homeassistant.sh' # <-- https://github.com/hassio-addons/addon-ssh/issues/115
         - echo "restarting home assistant"
         - ha core restart
+
+#! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: c5e905962d072c060c2e8b54159e6a6d565dbba424fde7db8c7ce09f3f14840f
+hmac: 5f17fbb167af6de2a9d0bcee7ec59244f8ef268fc05c4ae8502c13910746a650
 
 ...
