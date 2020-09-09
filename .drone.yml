@@ -124,7 +124,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 'hass.i.hs2k.us'
+        - from_secret: ssh_ip
       username: root
       key:
         from_secret: ssh_key
@@ -138,7 +138,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 'hass.i.hs2k.us'
+        - from_secret: ssh_ip
       username: root
       key:
         from_secret: ssh_key
@@ -151,6 +151,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: 92bde69231b17b1df032638848f42bd20e27e12381145ca50e8f39023d803bfb
+hmac: 8142f35f4ae0d09edc1b23fa2e6691b163b02f4d59f971ece7eb8829a9851487
 
 ...
