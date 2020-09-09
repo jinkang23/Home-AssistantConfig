@@ -119,7 +119,7 @@ steps:
       port: 22
       script:
         - cd ~/config
-        - git fetch 
+        - git fetch
         - git reset --hard origin/master
 
   - name: restart
