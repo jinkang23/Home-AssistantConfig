@@ -2,6 +2,7 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+# https://www.home-assistant.io/docs/configuration/basic/
 homeassistant:
   name: Home
   latitude: !secret ha_latitude
@@ -9,8 +10,13 @@ homeassistant:
   elevation: !secret ha_elevation
   unit_system: imperial
   time_zone: America/Chicago
-
+  external_url: !secret ha_external_url
+  internal_url: !secret ha_internal_url
   customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+     trusted_networks:
+        - 172.16.1.0/24
 
 # Text to speech
 tts:
