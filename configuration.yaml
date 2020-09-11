@@ -24,17 +24,18 @@ logger:
 
 # integrations
 # https://www.home-assistant.io/integrations/google_assistant
-google_assistant:
-  project_id: !secret ga_project_id
-  service_account:
-    private_key: !secret ga_private_key
-    client_email: !secret ga_client_email
-  report_state: true
-  expose_by_default: true
-  exposed_domains:
-    - switch
-    - light
-    - scene
+google_assistant: !include google_assistant.yaml
+# google_assistant:
+#   project_id: !secret ga_project_id
+#   service_account:
+#     private_key: !secret ga_private_key
+#     client_email: !secret ga_client_email
+#   report_state: true
+#   expose_by_default: true
+#   exposed_domains:
+#     - switch
+#     - light
+#     - scene
 
 cloud:
 ios:
