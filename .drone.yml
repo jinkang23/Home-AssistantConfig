@@ -30,6 +30,11 @@ steps:
         if [ "${FAILED}" = "1" ]; then
             exit 1
         fi
+  - name: pylint
+    image: cytopia/pylint:latest
+    commands:
+      - pylint ./python_scripts/*.py
+
 
 ---
 kind: pipeline
@@ -151,6 +156,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: e992f5fc8b1de1817d553e2303ffe26d7584f80b06450358b1137504e2184ae1
+hmac: 973d0f692f757b605a744b20c68e7fb7c402cd7b480dca47db3f53d36d5692bf
 
 ...

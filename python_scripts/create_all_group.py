@@ -1,3 +1,4 @@
+# pylint: disable=C0103,C0114
 domain = data.get('domain', '')
 group = data.get('group', '')
 
