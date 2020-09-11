@@ -1,3 +1,33 @@
+# Convert Switches to Lights 
+- platform: switch    
+  name: Living Room Light
+  entity_id: switch.living_room_light_switch
+- platform: switch    
+  name: Giraffe Lamp
+  entity_id: switch.giraffe_on_off
+- platform: switch    
+  name: Tiger Lamp
+  entity_id: switch.tiger_a47f7bfe_on_off
+- platform: switch    
+  name: Patio Light
+  entity_id: switch.patio_light_switch_4
+- platform: switch    
+  name: Porch Light
+  entity_id: switch.porch_light_switch_2
+- platform: switch    
+  name: Library Lamp
+  entity_id: switch.library_lamp_18b97afe_on_off
+- platform: switch    
+  name: Library Light
+  entity_id: switch.library_light_switch
+- platform: switch    
+  name: Hallway Light
+  entity_id: switch.hallway_light_switch_2
+- platform: switch    
+  name: Laundry Room Light
+  entity_id: switch.laundry_room_light_switch
+
+  
 # Light groups
 - platform: group
   name: kitchen Lights
@@ -8,27 +38,27 @@
   name: Living Room Lights
   entities:
     - light.living_room_lamp
-    - switch.living_room_light_switch
+    - light.living_room_light
     - light.fireplace_light_level
 - platform: group
   name: Master Bedroom Lights
   entities:
     - light.master_bedroom_light_level
-    - switch.giraffe_on_off
-    - switch.tiger_a47f7bfe_on_off
+    - light.giraffe_lamp
+    - light.tiger_lamp
 - platform: group
   name: Outdoor Lights
   entities:
-    - switch.porch_light_switch_2
-    - switch.patio_light_switch_4
+    - light.porch_light
+    - light.patio_light
 - platform: group
   name: Library Lights
   entities:
-    - switch.library_lamp_18b97afe_on_off
-    - switch.library_light_switch
+    - light.library_lamp
+    - light.library_light
 - platform: group
   name: Misc Lights
   entities:
     - light.entryway_light_level_3
-    - switch.hallway_light_switch_2
-    - switch.laundry_room_light_switch
+    - light.hallway_light
+    - light.laundry_room_light
