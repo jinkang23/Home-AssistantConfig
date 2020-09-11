@@ -38,7 +38,7 @@ steps:
 
 ---
 kind: pipeline
-name: test-hass-latest
+name: test
 
 trigger:
   branch:
@@ -59,50 +59,12 @@ steps:
     commands:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
-
-
----
-kind: pipeline
-name: test-hass-rc
-
-trigger:
-  branch:
-    - master
-    - develop
-  event:
-    exclude:
-      - pull_request
-
-steps:
-  - name: stage files
-    image: alpine:latest
-    commands:
-      -  mv fake_secrets.yaml secrets.yaml
   - name: hass-rc
     image: homeassistant/home-assistant:rc
     pull: if-not-exists
     commands:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
-
-
----
-kind: pipeline
-name: test-hass-dev
-
-trigger:
-  branch:
-    - master
-    - develop
-  event:
-    exclude:
-      - pull_request
-
-steps:
-  - name: stage files
-    image: alpine:latest
-    commands:
-      -  mv fake_secrets.yaml secrets.yaml
   - name: hass-dev
     image: homeassistant/home-assistant:dev
     pull: if-not-exists
@@ -110,16 +72,13 @@ steps:
       # - mv fake_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --info all --config .
 
-
 ---
 kind: pipeline
 name: upgrade
 
 depends_on:
   - validate
-  - test-hass-latest
-  - test-hass-rc
-  - test-hass-dev
+  - test
 
 trigger:
   branch:
@@ -155,9 +114,7 @@ name: deploy
 
 depends_on:
   - validate
-  - test-hass-latest
-  - test-hass-rc
-  - test-hass-dev
+  - test
   - upgrade
 
 trigger:
@@ -199,6 +156,6 @@ steps:
 #! - re-generate signature if changed via `drone sign jinkang23/Home-AssistantConfig --save`
 ---
 kind: signature
-hmac: 4f924ef589d880fd6faa6807a030675a2beb308d0898002d86edba7a99362c89
+hmac: 973d0f692f757b605a744b20c68e7fb7c402cd7b480dca47db3f53d36d5692bf
 
 ...
