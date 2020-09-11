@@ -52,7 +52,7 @@ http:
 
 # Includes
 automation: !include_dir_merge_list automation
-group: !include groups.yaml
+group: !include_dir_merge_list groups
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
