@@ -39,6 +39,8 @@ google_assistant:
 cloud:
 ios:
 
+python_script:
+
 # Text to speech
 tts:
   - platform: google_translate
