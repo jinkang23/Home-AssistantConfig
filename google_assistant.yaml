@@ -65,7 +65,7 @@ entity_config:
   switch.porch_light_switch_2:
     name: Porch Light
     room: HASS devices
-    expose: true  
+    expose: true
 
   #Library
   switch.library_lamp_18b97afe_on_off:
