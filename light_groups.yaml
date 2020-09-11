@@ -1,4 +1,4 @@
-# Convert Switches to Lights 
+# Convert Switches to Lights
 - platform: switch
   name: Living Room Light
   entity_id: switch.living_room_light_switch
@@ -27,7 +27,7 @@
   name: Laundry Room Light
   entity_id: switch.laundry_room_light_switch
 
-  
+
 # Light groups
 - platform: group
   name: kitchen Lights
