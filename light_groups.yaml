@@ -40,6 +40,7 @@
     - light.living_room_lamp
     - light.living_room_light
     - light.fireplace_light_level
+    - light.grandma_s_lamp
 - platform: group
   name: Master Bedroom Lights
   entities:

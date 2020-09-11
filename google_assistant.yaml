@@ -1,19 +1,96 @@
+# https://www.home-assistant.io/integrations/google_assistant
 project_id: !secret ga_project_id
 service_account:
   private_key: !secret ga_private_key
   client_email: !secret ga_client_email
 report_state: true
 expose_by_default: false
-# exposed_domains:
-#   - switch
-#   - light
-#   - scene
 entity_config:
+
+  #Living Room
+  light.living_room_lamp:
+    name: Living Room Lamp
+    room: HASS devices
+    expose: true
   switch.living_room_light_switch:
-    name: "Living Room Light"
+    name: Living Room Light
     room: "HASS devices"
     expose: true
-  light.dining_room_light_level_2:
-    name: "Dining Room Light"
+  light.grandma_s_lamp:
+    name: "Grandma's Lamp"
     room: "HASS devices"
+    expose: true
+  light.fireplace_light_level:
+    name: Fireplace Light
+    room: HASS devices
+    expose: true
+  switch.living_room_fan_switch_2:
+    name: Living Room Fan
+    room: HASS devices
+    expose: true
+
+  #Kitchen
+  light.dining_room_light_level_2:
+    name: Dining Room Light
+    room: HASS devices
+    expose: true
+  light.kitchen_light_level:
+    name: Kitchen Light
+    room: HASS devices
+    expose: true
+
+  #Master Bedroom
+  light.master_bedroom_light_level:
+    name: Master Bedroom Light
+    room: HASS devices
+    expose: true
+  switch.giraffe_on_off:
+    name: Giraffe
+    room: HASS devices
+    expose: true
+  switch.tiger_a47f7bfe_on_off:
+    name: Tiger
+    room: HASS devices
+    expose: true
+  switch.master_bedroom_fan_switch_3:
+    name: Master Bedroom Fan
+    room: HASS devices
+    expose: true
+
+  #Outdoor
+  switch.patio_light_switch_4:
+    name: Patio Light
+    room: HASS devices
+    expose: true
+  switch.porch_light_switch_2:
+    name: Porch Light
+    room: HASS devices
+    expose: true  
+
+  #Library
+  switch.library_lamp_18b97afe_on_off:
+    name: Library Lamp
+    room: HASS devices
+    expose: true
+  switch.library_light_switch:
+    name: Library Light
+    room: HASS devices
+    expose: true
+
+  #Laundry
+  switch.laundry_room_light_switch:
+    name: Laundry Room Light
+    room: HASS devices
+    expose: true
+
+  #Misc
+  light.entryway_light_level_3:
+    name: Entryway Light
+    room: HASS devices
+    expose: true
+
+  #Garage
+  switch.garage_light_switch_3:
+    name: Garage Light
+    room: HASS devices
     expose: true
