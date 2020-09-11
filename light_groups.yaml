@@ -1,29 +1,29 @@
 # Convert Switches to Lights 
-- platform: switch    
+- platform: switch
   name: Living Room Light
   entity_id: switch.living_room_light_switch
-- platform: switch    
+- platform: switch
   name: Giraffe Lamp
   entity_id: switch.giraffe_on_off
-- platform: switch    
+- platform: switch
   name: Tiger Lamp
   entity_id: switch.tiger_a47f7bfe_on_off
-- platform: switch    
+- platform: switch
   name: Patio Light
   entity_id: switch.patio_light_switch_4
-- platform: switch    
+- platform: switch
   name: Porch Light
   entity_id: switch.porch_light_switch_2
-- platform: switch    
+- platform: switch
   name: Library Lamp
   entity_id: switch.library_lamp_18b97afe_on_off
-- platform: switch    
+- platform: switch
   name: Library Light
   entity_id: switch.library_light_switch
-- platform: switch    
+- platform: switch
   name: Hallway Light
   entity_id: switch.hallway_light_switch_2
-- platform: switch    
+- platform: switch
   name: Laundry Room Light
   entity_id: switch.laundry_room_light_switch
 
