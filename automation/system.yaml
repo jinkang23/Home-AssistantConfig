@@ -19,13 +19,7 @@
 - alias: 'Start HomeKit'
   trigger:
     - platform: state
-      entity_id: sensor.ozw_status
-      to: 'driverAllNodesQueried'
-    - platform: state
-      entity_id: sensor.ozw_status
-      to: 'driverAwakeNodesQueried'
-    - platform: state
-      entity_id: sensor.ozw_status
-      to: 'driverAllNodesQueriedSomeDead'
+      entity_id: binary_sensor.ozw_network_ready
+      to: 'on'
   action:
     - service: homekit.start
