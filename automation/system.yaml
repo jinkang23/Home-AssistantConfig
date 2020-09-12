@@ -26,6 +26,6 @@
       to: 'driverAwakeNodesQueried'
     - platform: state
       entity_id: sensor.ozw_status
-      to: 'driverAllNodesQueriedSomeDead'    
+      to: 'driverAllNodesQueriedSomeDead'
   action:
     - service: homekit.start
