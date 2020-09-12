@@ -1,0 +1,10 @@
+- platform: mqtt
+    name: "OZW Status"
+    state_topic: "OpenZWave/1/status/"
+    value_template: '{{value_json.Status}}'
+    json_attributes_topic: "OpenZWave/1/status/"
+- platform: mqtt
+    name: "OZW Node Event"
+    state_topic: "OpenZWave/1/event/notification/"
+    value_template: '{{value_json.Event}}'
+    json_attributes_topic: "OpenZWave/1/event/notification/"

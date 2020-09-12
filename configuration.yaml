@@ -50,6 +50,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 light: !include light_groups.yaml
 binary_sensor: !include_dir_merge_list sensors_binary
+sensor: !include_dir_merge_list sensors
 
 # ***Custom Components*** #
 
