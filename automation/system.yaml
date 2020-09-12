@@ -6,13 +6,21 @@
     - service: hassio.addon_restart
       data:
         addon: core_letsencrypt
+# - alias: 'Start HomeKit'
+#   trigger:
+#     - platform: event
+#       event_type: zwave.network_ready
+#     - platform: event
+#       event_type: zwave.network_complete
+#     - platform: event
+#       event_type: zwave.network_complete_some_dead
+#   action:
+#     - service: homekit.start
 - alias: 'Start HomeKit'
   trigger:
-    - platform: event
-      event_type: zwave.network_ready
-    - platform: event
-      event_type: zwave.network_complete
-    - platform: event
-      event_type: zwave.network_complete_some_dead
+    - platform: state
+      entity_id: binary_sensor.ozw_network_ready
+      state: 'on'
   action:
     - service: homekit.start
+
