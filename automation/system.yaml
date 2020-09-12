@@ -20,7 +20,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.ozw_network_ready
-      state: 'on'
+      to: 'on'
   action:
     - service: homekit.start
 
