@@ -1,2 +1,23 @@
 # https://www.home-assistant.io/integrations/homekit/
 auto_start: false
+- filter:
+    include_entities:
+      - light.living_room_lamp
+      - switch.living_room_light_switch
+      - light.grandma_s_lamp
+      - light.fireplace_light_level
+      - switch.living_room_fan_switch_2
+      - light.dining_room_light_level_2
+      - light.kitchen_light_level
+      - light.master_bedroom_light_level
+      - switch.giraffe_on_off
+      - switch.tiger_a47f7bfe_on_off
+      - switch.master_bedroom_fan_switch_3
+      - switch.patio_light_switch_4
+      - switch.porch_light_switch_2
+      - switch.library_lamp_18b97afe_on_off
+      - switch.library_light_switch
+      - switch.laundry_room_light_switch
+      - light.entryway_light_level_3
+      - switch.garage_light_switch_3
+      - switch.hallway_light_switch_2

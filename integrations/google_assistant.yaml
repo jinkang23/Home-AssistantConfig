@@ -88,6 +88,10 @@ entity_config:
     name: Entryway Light
     room: HASS devices
     expose: true
+  switch.hallway_light_switch_2:
+    name: Hallway Light
+    room: HASS devices
+    expose: true
 
   #Garage
   switch.garage_light_switch_3:
