@@ -22,9 +22,11 @@ homeassistant:
 logger:
   default: info
 
-# integrations
+# *** Integrations *** #
 # https://www.home-assistant.io/integrations/google_assistant
-google_assistant: !include google_assistant.yaml
+google_assistant: !include ./integrations/google_assistant.yaml
+# https://www.home-assistant.io/integrations/homekit/
+homekit: !include ./integrations/homekit.yaml
 
 cloud:
 ios:
@@ -37,7 +39,6 @@ tts:
 
 # https://www.home-assistant.io/integrations/http
 http:
-  server_host: '0.0.0.0'
   use_x_forwarded_for: true
   trusted_proxies:
     - '172.16.1.1'
@@ -48,10 +49,7 @@ group: !include groups.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 light: !include light_groups.yaml
-
-# *** Integrations *** #
-homekit:
-  auto_start: false
+binary_sensor: !include_dir_merge_list sensors_binary
 
 # ***Custom Components*** #
 
