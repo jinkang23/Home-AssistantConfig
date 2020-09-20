@@ -8,7 +8,7 @@
 home-assistant_v2.db*
 home-assistant.db*
 html5_push_registrations.conf
-options.xml
+# options.xml
 pyozw.sqlite
 ip_bans.yaml
 secrets.yaml
@@ -18,6 +18,10 @@ zigbee.db
 zwcfg_*
 zwscene.xml
 node-red/*
+
+#include
+!ozwave/
+!ozwave/*
 
 # automatically downloaded dependencies
 deps
