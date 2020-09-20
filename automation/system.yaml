@@ -6,10 +6,21 @@
     - service: hassio.addon_restart
       data:
         addon: core_letsencrypt
+# For OpenZwave (beta) integration - not active yet
+# - alias: 'Start HomeKit' 
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.ozw_network_ready
+#       to: 'on'
+#   action:
+#     - service: homekit.start
 - alias: 'Start HomeKit'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.ozw_network_ready
-      to: 'on'
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: event
+      event_type: zwave.network_complete
+    - platform: event
+      event_type: zwave.network_complete_some_dead
   action:
     - service: homekit.start

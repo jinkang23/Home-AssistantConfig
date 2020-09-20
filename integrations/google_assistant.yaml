@@ -24,13 +24,13 @@ entity_config:
     name: Fireplace Light
     room: HASS devices
     expose: true
-  switch.living_room_fan_switch_2:
+  switch.living_room_fan_switch:
     name: Living Room Fan
     room: HASS devices
     expose: true
 
   #Kitchen
-  light.dining_room_light_level_2:
+  light.dining_room_light_level:
     name: Dining Room Light
     room: HASS devices
     expose: true
@@ -48,27 +48,27 @@ entity_config:
     name: Giraffe
     room: HASS devices
     expose: true
-  switch.tiger_a47f7bfe_on_off:
+  switch.tiger_on_off:
     name: Tiger
     room: HASS devices
     expose: true
-  switch.master_bedroom_fan_switch_3:
+  switch.master_bedroom_fan_switch:
     name: Master Bedroom Fan
     room: HASS devices
     expose: true
 
   #Outdoor
-  switch.patio_light_switch_4:
+  switch.patio_light_switch:
     name: Patio Light
     room: HASS devices
     expose: true
-  switch.porch_light_switch_2:
+  switch.porch_light_switch:
     name: Porch Light
     room: HASS devices
     expose: true
 
   #Library
-  switch.library_lamp_18b97afe_on_off:
+  switch.library_lamp_on_off:
     name: Library Lamp
     room: HASS devices
     expose: true
@@ -84,17 +84,17 @@ entity_config:
     expose: true
 
   #Misc
-  light.entryway_light_level_3:
+  light.entryway_light_level:
     name: Entryway Light
     room: HASS devices
     expose: true
-  switch.hallway_light_switch_2:
+  switch.hallway_light_switch:
     name: Hallway Light
     room: HASS devices
     expose: true
 
   #Garage
-  switch.garage_light_switch_3:
+  switch.garage_light_switch:
     name: Garage Light
     room: HASS devices
     expose: true

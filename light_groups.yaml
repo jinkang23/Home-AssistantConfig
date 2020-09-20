@@ -7,22 +7,22 @@
   entity_id: switch.giraffe_on_off
 - platform: switch
   name: Tiger Lamp
-  entity_id: switch.tiger_a47f7bfe_on_off
+  entity_id: switch.tiger_on_off
 - platform: switch
   name: Patio Light
-  entity_id: switch.patio_light_switch_4
+  entity_id: switch.patio_light_switch
 - platform: switch
   name: Porch Light
-  entity_id: switch.porch_light_switch_2
+  entity_id: switch.porch_light_switch
 - platform: switch
   name: Library Lamp
-  entity_id: switch.library_lamp_18b97afe_on_off
+  entity_id: switch.library_lamp_on_off
 - platform: switch
   name: Library Light
   entity_id: switch.library_light_switch
 - platform: switch
   name: Hallway Light
-  entity_id: switch.hallway_light_switch_2
+  entity_id: switch.hallway_light_switch
 - platform: switch
   name: Laundry Room Light
   entity_id: switch.laundry_room_light_switch
@@ -33,7 +33,7 @@
   name: kitchen Lights
   entities:
     - light.kitchen_light_level
-    - light.dining_room_light_level_2
+    - light.dining_room_light_level
 - platform: group
   name: Living Room Lights
   entities:
@@ -60,6 +60,6 @@
 - platform: group
   name: Misc Lights
   entities:
-    - light.entryway_light_level_3
+    - light.entryway_light_level
     - light.hallway_light
     - light.laundry_room_light
