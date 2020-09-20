@@ -7,7 +7,7 @@
       data:
         addon: core_letsencrypt
 # For OpenZwave (beta) integration - not active yet
-# - alias: 'Start HomeKit' 
+# - alias: 'Start HomeKit'
 #   trigger:
 #     - platform: state
 #       entity_id: binary_sensor.ozw_network_ready
