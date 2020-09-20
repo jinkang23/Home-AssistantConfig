@@ -23,6 +23,10 @@ logger:
   default: info
 
 # *** Integrations *** #
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: !secret zwave_network_key
+  
 # https://www.home-assistant.io/integrations/google_assistant
 google_assistant: !include ./integrations/google_assistant.yaml
 # https://www.home-assistant.io/integrations/homekit/
