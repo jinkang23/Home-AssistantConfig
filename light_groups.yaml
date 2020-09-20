@@ -63,3 +63,20 @@
     - light.entryway_light_level
     - light.hallway_light
     - light.laundry_room_light
+- platform: group
+  name: All Inside Lights
+  entities:
+    - light.kitchen_light_level
+    - light.dining_room_light_level
+    - light.living_room_lamp
+    - light.living_room_light
+    - light.fireplace_light_level
+    - light.grandma_s_lamp
+    - light.master_bedroom_light_level
+    - light.giraffe_lamp
+    - light.tiger_lamp
+    - light.library_lamp
+    - light.library_light
+    - light.entryway_light_level
+    - light.hallway_light
+    - light.laundry_room_light
