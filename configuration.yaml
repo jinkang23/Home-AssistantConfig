@@ -17,26 +17,28 @@ homeassistant:
     - type: homeassistant
     - type: trusted_networks
       trusted_networks:
-        - 172.16.1.0/24
+        - 192.168.4.0/22
+        - 192.168.20.0/24
 
 logger:
   default: info
 
 # *** Integrations *** #
-zwave:
-  usb_path: /dev/serial/by-id/usb-0658_0200-if00
-  network_key: !secret zwave_network_key
-  config_path: /config/ozwave/config
+# zwave:
+#   usb_path: /dev/serial/by-id/usb-0658_0200-if00
+#   network_key: !secret zwave_network_key
+#   config_path: /config/ozwave/config
 
-# https://www.home-assistant.io/integrations/google_assistant
-google_assistant: !include ./integrations/google_assistant.yaml
-# https://www.home-assistant.io/integrations/homekit/
-homekit: !include ./integrations/homekit.yaml
+# # https://www.home-assistant.io/integrations/google_assistant
+# google_assistant: !include ./integrations/google_assistant.yaml
 
-cloud:
-ios:
+# # https://www.home-assistant.io/integrations/homekit/
+# homekit: !include ./integrations/homekit.yaml
 
-python_script:
+# cloud:
+# ios:
+
+# python_script:
 
 # Text to speech
 tts:
@@ -46,25 +48,26 @@ tts:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - '172.16.1.1'
+    - '192.168.10.11'
 
-# Includes
-automation: !include_dir_merge_list automation
-group: !include groups.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
-light: !include light_groups.yaml
-binary_sensor: !include_dir_merge_list sensors_binary
-sensor: !include_dir_merge_list sensors
+# Includes #TODO: enable later
+# automation: !include_dir_merge_list automation
+# group: !include groups.yaml
+# script: !include scripts.yaml
+# scene: !include scenes.yaml
+# light: !include light_groups.yaml
+# binary_sensor: !include_dir_merge_list sensors_binary
+# sensor: !include_dir_merge_list sensors
 
 # ***Custom Components*** #
 
-# alarmdotcomajax: https://github.com/uvjustin/alarmdotcomajax
-alarm_control_panel:
-  - platform: alarmdotcomajax
-    username: !secret alarmdotcom_username
-    password: !secret alarmdotcom_password
-    code: !secret alarmdotcom_code
-    force_bypass: "true"
-    no_entry_delay: "home"
-    silent_arming: "false"
+#TODO: consider enabling later
+# # alarmdotcomajax: https://github.com/uvjustin/alarmdotcomajax
+# alarm_control_panel:
+#   - platform: alarmdotcomajax
+#     username: !secret alarmdotcom_username
+#     password: !secret alarmdotcom_password
+#     code: !secret alarmdotcom_code
+#     force_bypass: "true"
+#     no_entry_delay: "home"
+#     silent_arming: "false"

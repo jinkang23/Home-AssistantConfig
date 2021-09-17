@@ -129,7 +129,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - '172.16.40.20'
+        - '192.168.30.10'
       username: root
       key:
         from_secret: ssh_key
@@ -143,7 +143,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - '172.16.40.20'
+        - '192.168.30.10'
       username: root
       key:
         from_secret: ssh_key
