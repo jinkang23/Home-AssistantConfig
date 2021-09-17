@@ -35,8 +35,8 @@ logger:
 # # https://www.home-assistant.io/integrations/homekit/
 # homekit: !include ./integrations/homekit.yaml
 
-# cloud:
-# ios:
+cloud:
+ios:
 
 # python_script:
 
