@@ -29,5 +29,7 @@ lib
 www
 
 # Log files
-home-assistant.log
+home-assistant.log*
+*.log
+*.log*
 OZW_Log.txt
